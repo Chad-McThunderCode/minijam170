@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://6ilvctsep6i6"]
+
+[ext_resource type="Script" path="res://TrackPiece.gd" id="1_j6g5g"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TrackPiece" type="Line2D" parent="."]
+position = Vector2(500, 500)
+script = ExtResource("1_j6g5g")
