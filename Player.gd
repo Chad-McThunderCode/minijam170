@@ -1,7 +1,7 @@
 extends Node2D
 class_name Player
 
-var momentum: Vector2 = Vector2(0, 0)
+var momentum: Vector2 = Vector2(0, -1)
 var segments: Array
 
 func constructor(segments: Array):
@@ -13,7 +13,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	self.momentum += Vector2(0, 9.81*delta)
+	#self.momentum += Vector2(0, 9.81*delta)
 	self.handleCollision()
 	self.global_position += self.momentum
 
@@ -21,5 +21,13 @@ func handleCollision():
 	var startingPoint = self.global_position
 	var endPoint = self.global_position + self.momentum
 	for segment in self.segments:
-		if(segment.global_position.distance_to(self.global_position) < segment.r):
-			print("in range of", segment)
+		var startDistance = startingPoint.distance_to(segment.global_position)
+		var endDistance = endPoint.distance_to(segment.global_position)
+		if(startDistance < segment.r):
+			if(endDistance > segment.r):
+				print("inside")
+				print("going out")
+		else:
+			if(endDistance < segment.r):
+				print("outside")
+				print("going in")
