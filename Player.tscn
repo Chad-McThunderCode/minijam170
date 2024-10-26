@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://chgiptiofuuwt" path="res://sprite_player_placeholder.jpg" id="2_pn2g5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xkkv0"]
-radius = 31.0161
+radius = 8.0
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1

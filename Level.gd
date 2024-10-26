@@ -8,7 +8,8 @@ var segments: Array = []
 func _ready() -> void:
 	var totalWidth = 0
 	for i in 30:
-		var r = 20 + randf() * 180
+		#var r = 20 + randf() * 180
+		var r = 300
 		totalWidth += r
 		var piece = TrackPiece.new(r, -PI/4 + randf() * PI/2, PI, 20)
 		piece.position = Vector2(totalWidth, 300)
